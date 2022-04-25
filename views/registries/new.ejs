@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/registries" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>Item:</label>
+  <input type="text" name="itemType">
+  <label>Event:</label>
+  <input type="text" name="eventType" checked>
+  <input type="submit" value="Add Registry">
+</form>
+
+<%- include('../partials/footer') %>

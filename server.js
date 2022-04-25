@@ -16,6 +16,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var registryRouter = require('./routes/registry');
 
 var app = express();
 
@@ -50,6 +51,8 @@ app.use(function(req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+app.use('/registries', registryRouter);
+
 // Make user available within every EJS template
 app.use(function(req, res, next) {
   res.locals.user = req.user;
@@ -57,6 +60,7 @@ app.use(function(req, res, next) {
 });
 
 const isLoggedIn = require('./config/auth');
+const registry = require('./models/registry');
 
 
 // catch 404 and forward to error handler

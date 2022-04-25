@@ -9,15 +9,13 @@
   </head>
   <body>
     <nav>
-      
-      <a href="/" <%- title === 'All Movies' ? 'class="active"' : '' %>></a>
       <% if (user) { %>
         <a href="/"	<%- title === 'Add Performer' ? 'class="active"' : '' %>>
-        ADD PERFORMER</a>
-        <a href="/" <%- title === 'Add Movie' ? 'class="active"' : '' %>>ADD MOVIE</a>
+        Search registries</a>
+        <a href="/registries/new" <%- title === 'Add Registry' ? 'class="active"' : '' %>>Build a Registry</a>
         <a href="/logout">LOG OUT</a>
       <% } else { %>
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <a href="/auth/google" class="login">LOGIN with &nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
       <% } %>
     </nav>
     <main>
