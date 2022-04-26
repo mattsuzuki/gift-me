@@ -14,18 +14,17 @@ const registriesSchema = new Schema({
       return new Date().getFullYear();
     }
   },
-description: {
+item: {
     type: String,
  
   },
-  items: {
+  eventType: {
     title: String, 
     URL: String, 
   }, 
 
 }, {
-  // Mongoose will automatically add and maintain
-  // a createdAt and updatedAt property on the docs
+
   timestamps: true
 });
 
