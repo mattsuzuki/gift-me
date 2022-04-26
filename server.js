@@ -53,6 +53,7 @@ app.use('/users', usersRouter);
 
 app.use('/registries', registryRouter);
 
+
 // Make user available within every EJS template
 app.use(function(req, res, next) {
   res.locals.user = req.user;

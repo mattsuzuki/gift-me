@@ -40,3 +40,4 @@ const registriesSchema = new Schema({
 
 
 module.exports = mongoose.model("Registry", registriesSchema);
+

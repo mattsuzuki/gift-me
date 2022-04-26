@@ -10,7 +10,7 @@ router.get('/', registryCtrl.index);
 // GET /registries/new (new functionality)
 router.get('/new', registryCtrl.new);
 // GET /registries/:id (show functionality)
-// router.get('/:id', registryCtrl.show);
+router.get('/:id', registryCtrl.show);
 // POST /registry (create functionality)
 router.post('/', isLoggedIn, registryCtrl.create);
 

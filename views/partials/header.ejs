@@ -9,8 +9,9 @@
   </head>
   <body>
     <nav>
+      <img src="/Users/matthewsuzuki/code/Gift-me/imgs/giftme.png" alt="logo">
       <% if (user) { %>
-        <a href="/"	<%- title === 'Add Performer' ? 'class="active"' : '' %>>
+        <a href="/"	<%- title === 'Add Item' ? 'class="active"' : '' %>>
         Search registries</a>
         <a href="/registries/new" <%- title === 'Add Registry' ? 'class="active"' : '' %>>Build a Registry</a>
         <a href="/logout">LOG OUT</a>

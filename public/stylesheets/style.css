@@ -24,6 +24,14 @@ body > nav {
   color: white;
 }
 
+.showcase {
+  margin: auto;
+  width: 50%;
+  border: 3px solid white;
+  padding: 10px;
+  
+}
+
 nav > img {
   width: 34px;
   object-fit: contain;
@@ -43,7 +51,7 @@ body > main {
 }
 
 body > main h1:first-child {
-  margin-bottom: 50px;
+  margin-top: 80px;
 }
 
 nav > a {
