@@ -2,24 +2,23 @@
 
 <section id="show-page">
   <div>Title: </div>
-  <div><%= Registry.title %></div>
+  <div><%= Registry.name %></div>
   <div>Release Year: </div>
   <div><%= registry.releaseYear %></div>
   <div>Rating: </div>
-  <div><%= registry.mpaaRating %></div>
   <div>Now Showing: </div>
   <div><%= registry.eventType ? 'Yes' : 'Nope' %></div>
   <!-- start cast list -->
   <div>Cast:</div>
   <ul>
-    <%- registry.cast.map(p => 
+    <%- registry.title.map(p => 
       `<li>${p.name} <small>${p.born.toLocaleDateString()}</small></li>`
     ).join('') %>
   </ul>
   <!-- end cast list -->
 </section>
 <!-- add to cast form below this comment -->
-<form id="add-per-to-cast" action="/registries/<%= registry._id %>/performers" method="POST">
+<form id="add-per-to-cast" action="/registries/<%= registry._id %>/items" method="POST">
   <select name="performerId">
     <%- performers.map(p => 
       `<option value="${p._id}">${p.name}</option>`
@@ -27,6 +26,16 @@
   </select>
   <button type="submit">Add to Cast</button>
 </form>
+<% if (user) { %>
+  <form id="add-items-form" method="POST" action="/registries/<%= registry._id %>/items">
+    <label>Items:</label>
+    <textarea name="content"></textarea>
+    <input type="text" name="name">
+    <input type="text" name="itemType">
+    <input type="url" name="URL">
+    <input type="submit" value="Add Item">
+  </form>
+<% } %>
 
 <br><br>
 <h2>Reviews</h2>
@@ -46,7 +55,7 @@
   </form>
 <% } %>
 
-<% if (registry.reviews.length) { %>
+<% if (registry.items.length) { %>
   <table>
     <thead>
       <tr>
@@ -59,16 +68,16 @@
     </thead>
     <tbody>
       <% let total = 0 %>
-      <% registry.reviews.forEach(function(r) { %>
+      <% registry.items.forEach(function(r) { %>
         <% total += r.rating %>
         <tr>
-          <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
+          <td class="item-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
           <td><%= r.createdAt.toLocaleDateString() %></td>
           <td><%= r.content %></td>
           <td><%= r.rating %></td>
           <td>
             <% if (user && user._id.equals(r.user)) { %>
-              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+              <form action="/items/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
             <% } %>

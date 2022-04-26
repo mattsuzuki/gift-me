@@ -2,32 +2,41 @@ const mongoose = require("mongoose");
 // Optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
-const registriesSchema = new Schema(
-  {
-    title: {
-      type: String,
-      required: true,
-    },
+const itemSchema = new Schema ({
+  name: {
+    type: String
 
-    user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+  }, 
+  itemType:{ 
+    type: String
+  }, 
+  URL: {
+    type: String
+  }, 
+  });
 
-    date: {
-      type: Number,
-      default: function () {
-        return new Date().getFullYear();
-      },
-    },
-    item: {
-      type: String,
-    },
-    eventType: {
-      title: String,
-      URL: String,
-    },
+const registriesSchema = new Schema({
+  title: {
+    type: String,
+    required: true
   },
-  {
-    timestamps: true,
+
+  user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+  userName: String,
+  userAvatar: String
+}, {
+  date: {
+    type: Number,
+    default: function () {
+      return new Date().getFullYear();
+    },
+    items: [itemSchema]
+  }, 
+  eventType: {
+    title: String,
+   
   }
-);
+});
+
 
 module.exports = mongoose.model("Registry", registriesSchema);
