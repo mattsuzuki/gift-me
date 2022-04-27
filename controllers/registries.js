@@ -24,7 +24,6 @@ function index(req, res) {
   }
   
   function create(req, res) {
-    req.body.eventType = !!req.body.eventType; // there is no eventType in the schema
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
     }
@@ -32,24 +31,16 @@ function index(req, res) {
     var registry = new Registry(req.body);
     registry.save(function(err) {
       // one way to handle errors
-      if (err) return res.redirect('/registries/');
+      if (err) return res.redirect('/registries/new');
       console.log(registry);
       res.redirect(`/registries/${registry._id}`);
     });
   }
 
-  function show(res, req) {
-    Registry.findById(req.params._id, function(err, registry) {
-      if (err) {
-        console.log(err)
-      }
+  function show(req, res) {
+    Registry.findById(req.params.id, function(err, registry) {
+ 
       
-      res.render('registries/show', { registry });
-    });
-  }
-  function show(res, req) {
-    Registry.findById(req.params._id, function(err, registry) {
-      console.log(registry)
       res.render('registries/show', { registry });
     });
   }
