@@ -11,7 +11,7 @@
     <nav>
       <img src="/images/giftme.png" alt="logo">
       <% if (user) { %>
-        <a href="/registries"	<%- title === 'Add Item' ? 'class="active"' : '' %>
+        <a id="search" href="/registries"	<%- title === 'Add Item' ? 'class="active"' : '' %>
         Search registries</a>
         <a href="/registries/new" <%- title === 'Add Registry' ? 'class="active"' : '' %>>Build a Registry</a>
         <a href="/logout">LOG OUT</a>

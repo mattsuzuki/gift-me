@@ -17,6 +17,10 @@ body {
 
 }
 
+#search {
+  color: white; 
+}
+
 body > nav {
   grid-area: nav;
   background-color: #000000;
