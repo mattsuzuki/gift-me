@@ -36,8 +36,7 @@ const registriesSchema = new Schema({
   
   }, 
   eventType: {
-    title: String,
-   
+    type: String,
   }
 });
 

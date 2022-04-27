@@ -14,7 +14,7 @@
   </ul>
 </section>
 
-<!-- <form
+<form
   id="add-per-to-cast"
   action="/registries/<%= registry._id %>/items"
   method="POST"
@@ -24,8 +24,8 @@
     <option value="${p._id}">${p.name}</option>
     ` ).join('') %>
   </select>
-  <button type="submit">Add to Cast</button>
-</form> -->
+
+</form>
 <% if (user) { %>
  
 <form
@@ -51,23 +51,23 @@
     </tr>
   </thead>
   <tbody>
-    <% let total = 0 %> <% registry.items.forEach(function(r) { %> <% total +=
-    r.rating %>
+    <% registry.items.forEach(function(item) { %> <% item +=
+    items %>
     <tr>
       <td class="items-user">
         <img alt="avatar" src="<%= r.userAvatar %>" /><%= r.userName %>
       </td>
-
-      <td><%= r.name %></td>
       <td><%= r.itemType %></td>
+      <td><%= r.name %></td>
+      <td><%= r.URL %></td>
       
     </tr>
     <% }); %>
     <tr>
       <td colspan="3"></td>
-      <!-- <td>
-        <strong><%= (total / registry.items.length).toFixed(1) %></strong>
-      </td> -->
+      <td>
+        <strong><%= ( registry.items.length).toFixed(1) %></strong>
+      </td>
     </tr>
   </tbody>
 </table>
