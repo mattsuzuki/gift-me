@@ -7,5 +7,5 @@ const Registry = require('./models/registy');
 
 
 Registry.find({}, function(err, registryDocs) {
-  registry = registryDocs;
+  Registry = registryDocs;
 });

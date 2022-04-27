@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs') %>
 
 <section id="show-page">
-  <div>Title:</div>
+  <div class="regName">Regitry Name:</div>
   <div><%= registry.title %></div>
   <div><%= registry.items %></div>
 
@@ -14,7 +14,7 @@
   </ul>
 </section>
 
-<form
+<!-- <form
   id="add-per-to-cast"
   action="/registries/<%= registry._id %>/items"
   method="POST"
@@ -25,7 +25,7 @@
     ` ).join('') %>
   </select>
   <button type="submit">Add to Cast</button>
-</form>
+</form> -->
 <% if (user) { %>
  
 <form
@@ -33,11 +33,9 @@
   method="POST"
   action="/registries/<%= registry._id %>/items"
 >
-  <label>Items:</label>
-  <textarea name="content"></textarea>
+  <label>Items Needed:</label>
+  <!-- <textarea name="content"></textarea> -->
   <input type="text" name="name" />
-  <input type="text" name="itemType" />
-  <input type="text" name="URL" />
   <input type="submit" value="Add Item" />
 </form>
 
@@ -46,17 +44,17 @@
   <thead>
     <tr>
       <th>User</th>
-      <th>Date</th>
-      <th>Review</th>
-      <th>Rating</th>
-      <th></th>
+      <th>Item</th>
+   
+      <!-- <th>Rating</th> -->
+ 
     </tr>
   </thead>
   <tbody>
     <% let total = 0 %> <% registry.items.forEach(function(r) { %> <% total +=
     r.rating %>
     <tr>
-      <td class="item-user">
+      <td class="items-user">
         <img alt="avatar" src="<%= r.userAvatar %>" /><%= r.userName %>
       </td>
 
@@ -67,9 +65,9 @@
     <% }); %>
     <tr>
       <td colspan="3"></td>
-      <td>
+      <!-- <td>
         <strong><%= (total / registry.items.length).toFixed(1) %></strong>
-      </td>
+      </td> -->
     </tr>
   </tbody>
 </table>

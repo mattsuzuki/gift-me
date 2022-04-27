@@ -33,7 +33,13 @@ text-align: center;
   justify-content: center;
   
 }
+label {
+  text-align: center;
+}
 
+input {
+  color: black;
+}
 nav > img {
   width: 34px;
   object-fit: contain;
@@ -79,17 +85,27 @@ nav > a.active {
   grid-template-columns: repeat(2, minmax(auto, 22rem));
 }
 
+th {
+  margin-top: 35px;
+}
+
 #new-form *,
 #add-review-form *,
 #add-performer-form * {
   font-size: 20px;
   padding: 5px;
-  border: 1px solid white;
+
   border-radius: 5px;
 }
 
 #add-items-form{
   display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+#add-items-form input{
+margin-top: 20px;
 }
 
 #new-form input[type="submit"] {
@@ -144,6 +160,14 @@ table td {
   grid-template-columns: auto auto;
   grid-gap: 1rem;
   margin-bottom: 2rem;
+}
+
+.regName {
+  text-align: center;
+}
+
+.addBtn {
+  margin-bottom: 35px;
 }
 
 #add-review-form input[type="submit"],

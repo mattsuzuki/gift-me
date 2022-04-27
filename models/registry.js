@@ -8,7 +8,8 @@ const itemSchema = new Schema ({
 
   }, 
   itemType:{ 
-    type: String
+    type: String,
+  
   }, 
   URL: {
     type: String
@@ -21,6 +22,7 @@ const registriesSchema = new Schema({
     required: true
   },
   items: [itemSchema],
+  
 
   user: { type: Schema.Types.ObjectId, ref: "User", required: true },
   userName: String,

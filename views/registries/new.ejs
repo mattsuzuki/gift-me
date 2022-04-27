@@ -3,14 +3,16 @@
 <form id="new-form" action="/registries" method="POST">
   <label>Name:</label>
   <input type="text" name="title">
+
   <label>Event:</label>
   <input type="text" name="eventType" >
   <label>Item:</label>
   <input type="text" name="itemType">
   <label>Date:</label>
   <input type="date" name="date">
-  <input type="submit" value="Add Registry">
+  <input class="addBtn" type="submit" value="Add Registry">
 
 </form>
 
 <%- include('../partials/footer') %>
+
