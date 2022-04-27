@@ -18,7 +18,7 @@ function deleteItem(req, res, next) {
     registry
       .save()
       .then(function () {
-        res.redirect(`/registry/${registry._id}`);
+        res.redirect(`/registries/${registry._id}`);
       })
       .catch(function (err) {
         return next(err);

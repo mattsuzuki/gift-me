@@ -42,22 +42,10 @@ function index(req, res) {
   function show(req, res) {
     Registry.findById(req.params.id, function(err, registry) {
  
-      
+      console.log(registry)
       res.render('registries/show.ejs', { registry, title: 'title' });
     });
   }
 
-//   function show(req, res) {
-//  Registry.findById(req.params.id)
-//       .populate('item')
-//       .exec(function(err, movie) {
-//         items.find(
-//           {_id: {$nin: registry.items}},
-//           function(err, items) {
-//             console.log(items);
-//             res.render('registries/show', { title: 'Movie Detail', movie, performers });
-//           }
-//         );
-//       });
-//   }
+
  

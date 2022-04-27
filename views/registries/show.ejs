@@ -1,76 +1,29 @@
 <%- include('../partials/header.ejs') %>
 
-<section id="show-page">
-  <div class="regName">Regitry Name:</div>
-  <div><%= registry.title %></div>
-  <div><%= registry.items %></div>
+<h1><%= registry.title %></h1>
+<h1><%= registry.eventType %></h1>
 
-  <div><%= registry.eventType %></div>
-
-  <ul>
-    <%- registry.items.map(p => `
-    <li>${p.name} <small></small></li>
-    ` ).join('') %>
-  </ul>
-</section>
-
-<form
-  id="add-per-to-cast"
-  action="/registries/<%= registry._id %>/items"
-  method="POST"
->
-  <select name="itemId">
-    <%- registry.items.map(p => `
-    <option value="${p._id}">${p.name}</option>
-    ` ).join('') %>
-  </select>
-
-</form>
-<% if (user) { %>
- 
+<h2>Add Item</h2>
 <form
   id="add-items-form"
   method="POST"
   action="/registries/<%= registry._id %>/items"
 >
-  <label>Items Needed:</label>
-  <!-- <textarea name="content"></textarea> -->
-  <input type="text" name="name" />
-  <input type="submit" value="Add Item" />
+  <label>Item Name:</label>
+  <input type="text" name="name" required />
+  <label>Item Type:</label>
+  <input type="text" name="itemType" required  />
+  <label>URL:</label>
+  <input type="text" name="URL" required /> 
+  <input type="submit" value="Add Item"  />
 </form>
 
-<% } %> <% if (registry.items.length) { %>
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Item</th>
-   
-      <!-- <th>Rating</th> -->
- 
-    </tr>
-  </thead>
-  <tbody>
-    <% registry.items.forEach(function(item) { %> <% item +=
-    items %>
-    <tr>
-      <td class="items-user">
-        <img alt="avatar" src="<%= r.userAvatar %>" /><%= r.userName %>
-      </td>
-      <td><%= r.itemType %></td>
-      <td><%= r.name %></td>
-      <td><%= r.URL %></td>
-      
-    </tr>
-    <% }); %>
-    <tr>
-      <td colspan="3"></td>
-      <td>
-        <strong><%= ( registry.items.length).toFixed(1) %></strong>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<% } else { %>
-<h5>No items Yet</h5>
-<% } %> <%- include('../partials/footer') %>
+<% registry.items.forEach(function(item) { %>
+  <h3><%= item.name %></h3>
+  <form method="POST" action="/items/<%=item._id%>?_method=DELETE" class="delete-form">
+    <button type ="submit">X</button>
+  </form>
+<% }) %>
+
+
+<%- include('../partials/footer') %>
