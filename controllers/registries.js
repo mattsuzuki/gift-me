@@ -31,6 +31,7 @@ function index(req, res) {
     }
     req.body.user = req.user._id;      // assign the logged in user's _id to relate this doc to the user
     var registry = new Registry(req.body);
+    // registry.user = req.body.id;
     registry.save(function(err) {
       // one way to handle errors
       if (err) return res.redirect('/registries/new');
