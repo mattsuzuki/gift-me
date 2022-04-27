@@ -20,6 +20,7 @@ const registriesSchema = new Schema({
     type: String,
     required: true
   },
+  items: [itemSchema],
 
   user: { type: Schema.Types.ObjectId, ref: "User", required: true },
   userName: String,
@@ -30,7 +31,7 @@ const registriesSchema = new Schema({
     default: function () {
       return new Date().getFullYear();
     },
-    items: [itemSchema]
+  
   }, 
   eventType: {
     title: String,

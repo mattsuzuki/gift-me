@@ -17,6 +17,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var registryRouter = require('./routes/registry');
+var itemsRouter = require('./routes/items');
 
 var app = express();
 
@@ -50,6 +51,7 @@ app.use(function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/', itemsRouter);
 
 app.use('/registries', registryRouter);
 

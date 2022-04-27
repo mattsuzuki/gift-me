@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title><%= title %></title>
+    <title></title>
   </head>
   <body>
     <nav>
-      <img src="/Users/matthewsuzuki/code/Gift-me/imgs/giftme.png" alt="logo">
+      <img src="/images/giftme.png" alt="logo">
       <% if (user) { %>
-        <a href="/"	<%- title === 'Add Item' ? 'class="active"' : '' %>>
+        <a href="/"	<%- title === 'Add Item' ? 'class="active"' : '' %>
         Search registries</a>
         <a href="/registries/new" <%- title === 'Add Registry' ? 'class="active"' : '' %>>Build a Registry</a>
         <a href="/logout">LOG OUT</a>

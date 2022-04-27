@@ -27,10 +27,10 @@ body > nav {
 }
 
 .showcase {
-  margin: auto;
+text-align: center;
   width: 50%;
-  border: 3px solid white;
   padding: 10px;
+  justify-content: center;
   
 }
 
@@ -84,7 +84,12 @@ nav > a.active {
 #add-performer-form * {
   font-size: 20px;
   padding: 5px;
+  border: 1px solid white;
   border-radius: 5px;
+}
+
+#add-items-form{
+  display: flex;
 }
 
 #new-form input[type="submit"] {

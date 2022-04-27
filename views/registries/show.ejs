@@ -8,8 +8,8 @@
   <div><%= registry.eventType %></div>
 
   <ul>
-    <%- registry.title.map(p => `
-    <li>${p.name} <small>${p.born.toLocaleDateString()}</small></li>
+    <%- registry.items.map(p => `
+    <li>${p.name} <small></small></li>
     ` ).join('') %>
   </ul>
 </section>
@@ -20,25 +20,27 @@
   method="POST"
 >
   <select name="itemId">
-    <%- items.map(p => `
+    <%- registry.items.map(p => `
     <option value="${p._id}">${p.name}</option>
     ` ).join('') %>
   </select>
   <button type="submit">Add to Cast</button>
 </form>
 <% if (user) { %>
+ 
 <form
   id="add-items-form"
   method="POST"
-  action="/registries/<%= registry._id %>/itemId"
+  action="/registries/<%= registry._id %>/items"
 >
   <label>Items:</label>
   <textarea name="content"></textarea>
   <input type="text" name="name" />
   <input type="text" name="itemType" />
-  <input type="url" name="URL" />
+  <input type="text" name="URL" />
   <input type="submit" value="Add Item" />
 </form>
+
 <% } %> <% if (registry.items.length) { %>
 <table>
   <thead>
@@ -57,16 +59,10 @@
       <td class="item-user">
         <img alt="avatar" src="<%= r.userAvatar %>" /><%= r.userName %>
       </td>
-      <td><%= r.createdAt.toLocaleDateString() %></td>
-      <td><%= r.content %></td>
-      <td><%= r.rating %></td>
-      <td>
-        <% if (user && user._id.equals(r.user)) { %>
-        <form action="/items/<%= r._id %>?_method=DELETE" method="POST">
-          <button type="submit">X</button>
-        </form>
-        <% } %>
-      </td>
+
+      <td><%= r.name %></td>
+      <td><%= r.itemType %></td>
+      
     </tr>
     <% }); %>
     <tr>

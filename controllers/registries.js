@@ -1,4 +1,6 @@
+const registry = require('../models/registry');
 const Registry = require('../models/registry');
+const items = require('./items');
 
 
 module.exports = {
@@ -41,6 +43,21 @@ function index(req, res) {
     Registry.findById(req.params.id, function(err, registry) {
  
       
-      res.render('registries/show', { registry });
+      res.render('registries/show.ejs', { registry, title: 'title' });
     });
   }
+
+//   function show(req, res) {
+//  Registry.findById(req.params.id)
+//       .populate('item')
+//       .exec(function(err, movie) {
+//         items.find(
+//           {_id: {$nin: registry.items}},
+//           function(err, items) {
+//             console.log(items);
+//             res.render('registries/show', { title: 'Movie Detail', movie, performers });
+//           }
+//         );
+//       });
+//   }
+ 
