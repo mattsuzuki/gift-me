@@ -17,9 +17,6 @@ body {
 
 }
 
-#search {
-  color: white; 
-}
 
 body > nav {
   grid-area: nav;
@@ -90,9 +87,6 @@ nav > a.active {
   grid-template-columns: repeat(2, minmax(auto, 22rem));
 }
 
-a#search  {
-  color: white;
-}
 
 .showH {
   text-align: center;

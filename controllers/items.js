@@ -32,9 +32,7 @@ function create(req, res) {
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
     registry.items.push(req.body);
-    // Save the updated movie doc
     registry.save(function (err) {
-      // Step 5 says to redirect
       res.redirect(`/registries/${req.params.id}`);
     });
   });
