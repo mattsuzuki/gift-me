@@ -14,7 +14,7 @@ function deleteItem(req, res, next) {
     if (!registry) return res.redirect("/registry");
 
     registry.items.remove(req.params.id);
-    // Save the updated movie
+
     registry
       .save()
       .then(function () {

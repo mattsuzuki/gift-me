@@ -18,6 +18,14 @@
   <input type="submit" value="Add Item"  />
 </form>
 
+
+  <form action="/registries/<%= registry._id %>/edit" method="GET">
+    <button class="edit-button" type="submit">Edit Post</button>
+  </form>
+
+
+<form method="POST" action="/registries/<%=registry._id%>?_method=DELETE" class="delete-form">
+  <button type ="submit">Delete Registry</button>
 <% registry.items.forEach(function(item) { %>
   <h3><%= item.name %></h3>
   <form method="POST" action="/items/<%=item._id%>?_method=DELETE" class="delete-form">

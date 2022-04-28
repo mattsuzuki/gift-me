@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<form id="new-form" action="/registries/<%= registry._id %>?_method=PUT" method="POST">
+    <label>Name Your Registry:</label>
+    <input type="text" name="title" value="<%= registry.title %>">
+  
+    <label>Event:</label>
+    <input type="text" name="eventType" value="<%= registry.eventType %>" >
+  
+    <input class="addBtn" type="submit" value="Update Registry">
+  
+  </form>
+  
+
+<%- include('../partials/footer') %>
