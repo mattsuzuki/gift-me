@@ -90,6 +90,21 @@ nav > a.active {
   grid-template-columns: repeat(2, minmax(auto, 22rem));
 }
 
+a#search  {
+  color: white;
+}
+
+.showH {
+  text-align: center;
+  margin-bottom: -20px;
+
+}
+
+.showH h1{
+  margin-bottom: -25px;
+  width: 400px;
+}
+
 th {
   margin-top: 35px;
 }
@@ -107,10 +122,18 @@ th {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+  width: 450px;
 }
 
 #add-items-form input{
-margin-top: 20px;
+margin-bottom: 20px;
+padding: 10px;
+border-radius: 9px;
+}
+
+#add-items-form label{
+  font-size: 22px;
+  padding: 10px;
 }
 
 #new-form input[type="submit"] {
