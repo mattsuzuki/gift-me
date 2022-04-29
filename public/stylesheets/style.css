@@ -1,8 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: Helvetica;
-  color: #424748;
- 
+  font-family: "Poiret One", cursive;
+  color: white;
 }
 
 body {
@@ -10,24 +9,10 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: 50px 1fr;
-  grid-template-areas: 
+  grid-template-areas:
     "nav"
     "main";
-    
-
 }
-
-.button {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #f44336;
-}
-
-.button:hover {
-  background-color: #f44336;
-  color: white;
-}
-
 
 body > nav {
   grid-area: nav;
@@ -40,11 +25,10 @@ body > nav {
 }
 
 .showcase {
-text-align: center;
+  text-align: center;
   width: 50%;
   padding: 10px;
   justify-content: center;
-  
 }
 label {
   text-align: center;
@@ -64,7 +48,6 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   color: white;
   background-color: black;
   padding: 20px;
@@ -73,6 +56,8 @@ body > main {
 
 body > main h1:first-child {
   margin-top: 80px;
+  font-size: xxx-large;
+  width: 800px;
 }
 
 nav > a {
@@ -98,15 +83,13 @@ nav > a.active {
   grid-template-columns: repeat(2, minmax(auto, 22rem));
 }
 
-
 .showH {
   text-align: center;
   margin-bottom: -20px;
-
 }
 
-.showH h1{
-  margin-bottom: -25px;
+.showH h1 {
+  margin-bottom: 15px;
   width: 400px;
 }
 
@@ -119,24 +102,34 @@ th {
 #add-performer-form * {
   font-size: 20px;
   padding: 5px;
-
   border-radius: 5px;
 }
 
-#add-items-form{
+#add-items-form {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
   width: 450px;
 }
 
-#add-items-form input{
-margin-bottom: 20px;
-padding: 10px;
-border-radius: 9px;
+#newitem {
+  text-align: center;
 }
 
-#add-items-form label{
+#add-items-form input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 9px;
+}
+
+#edit-button {
+  width: 200px;
+  border-radius: 4px;
+  padding: 8px;
+  color: black;
+}
+
+#add-items-form label {
   font-size: 22px;
   padding: 10px;
 }
@@ -145,6 +138,7 @@ border-radius: 9px;
   grid-column: span 2;
   width: 10rem;
   margin-left: auto;
+  border-radius: 10px;
 }
 
 table {
@@ -161,20 +155,21 @@ table td {
   text-align: center;
 }
 
-#list td:nth-child(2), #list td:nth-child(3){
+#list td:nth-child(2),
+#list td:nth-child(3) {
   min-width: 100px;
 }
 
 #list a {
   border-radius: 4px;
-  background-color: #B8C0C2;
+  background-color: #b8c0c2;
   padding: 4px;
   text-decoration: none;
   font-size: 14px;
 }
 
 #list a:hover {
-  background-color: white;
+  background-color: black;
 }
 
 #show-page {
@@ -195,22 +190,14 @@ table td {
   margin-bottom: 2rem;
 }
 
-.regName {
-  text-align: center;
-}
-
-.addBtn {
-  margin-bottom: 35px;
-}
-
 #add-review-form input[type="submit"],
-#add-performer-form input[type="submit"]  {
+#add-performer-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
 }
 
 hr {
-  color: #424748
+  color: #424748;
 }
 
 #badge-container {
@@ -218,17 +205,17 @@ hr {
   flex-wrap: wrap;
   /* padding: 1rem; */
   width: 80%;
-  border: 2px solid #B8C0C2;
-  border-radius: .5rem;
-  margin: .5rem 0 2rem;
+  border: 2px solid #b8c0c2;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0 2rem;
 }
 
 .badge {
-  background-color: #B8C0C2;
-  padding: .5rem;
-  margin: .5rem;
-  border-radius: .3rem;
-  font-size: .8rem;
+  background-color: #b8c0c2;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
   text-align: center;
 }
 
@@ -237,7 +224,7 @@ ul {
   padding: 0;
   list-style: none;
 }
-	
+
 li {
   font-weight: bold;
 }
@@ -265,7 +252,5 @@ li {
 }
 
 form#new-form {
-margin-top: 40px;
-
-
+  margin-top: 40px;
 }

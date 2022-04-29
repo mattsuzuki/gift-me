@@ -1,9 +1,10 @@
 <%- include('../partials/header.ejs') %>
+
 <div class="showH">
 <h1><%= registry.title %></h1>
-<h2><%= registry.eventType %></h1>
+<h2><%= registry.eventType %></h2>
 </div>
-
+<% if (user._id.toString() === registry.user._id.toString()) { %>
 <form
   id="add-items-form"
   method="POST"
@@ -18,20 +19,29 @@
   <input type="submit" value="Add Item"  />
 </form>
 
-
-  <form action="/registries/<%= registry._id %>/edit" method="GET">
-    <button class="edit-button" type="submit">Edit Registry</button>
-  </form>
-
-
 <form method="POST" action="/registries/<%=registry._id%>?_method=DELETE" class="delete-form">
-  <button type ="submit">Delete Registry</button>
+  <button id="edit-button" type ="submit">Delete Registry</button>
+</form>
+
+<form action="/registries/<%= registry._id %>/edit" method="GET">
+  <button id="edit-button" type="submit">Edit Registry</button>
+</form>
+<% }%>
+
+<div id="regbuild">
+  <h2>Items</h2>
 <% registry.items.forEach(function(item) { %>
+  <div id="newitem">
+
   <h3><%= item.name %></h3>
+</div>
+<% if (user._id.toString() === registry.user._id.toString()) { %>
   <form method="POST" action="/items/<%=item._id%>?_method=DELETE" class="delete-form">
-    <button type ="submit">Delete Item</button>
+    <button id= "edit-button" type ="submit">Delete Item</button>
   </form>
+  <% }%>
 <% }) %>
+</div>
 
 
 <%- include('../partials/footer') %>

@@ -16,6 +16,7 @@ passport.use(
     function(accessToken, refreshToken, profile, cb) {
       // a user has logged in
       User.findOne({googleId: profile.id}).then(async function(user) {
+        console.log(profile)
         // returning user
         if (user) return cb(null, user);
         // we have a new user via OAuth!

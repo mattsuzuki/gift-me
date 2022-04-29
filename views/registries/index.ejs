@@ -3,14 +3,15 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Event<br>Type</th>
+      <th>Existing Registries</th>
+      <!-- <th>Existing Registries</th> -->
     
     </tr>
   </thead>
   <tbody>
     <% registries.forEach(function(m) { %>
       <tr>
-        <td><%= m.releaseYear %></td> 
+        <td><a href="/registries/<%= m._id %>"><%= m.title %></a></td>
         <td><a href="/registries/<%= m._id %>">DETAILS</a></td>
       </tr>
       <% }); %>

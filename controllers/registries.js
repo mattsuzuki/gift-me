@@ -49,7 +49,7 @@ function edit(req, res) {
     { _id: req.params.id, userRecommending: req.user._id },
     function (err, registry) {
       if (err || !registry) return res.redirect("/registries");
-      res.render("registries/edit", { registry });
+      res.render("registries/edit", { registry, title: 'edit registry' });
     }
   );
 }
