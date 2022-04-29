@@ -12,6 +12,8 @@
 <p>- JavaScript
 <p>- EJS
 <p>- CSS
+<p>- Node.js
+<p>- Heroku
 <p>- Express
 <p>- Mongoose 
 <p>- MongoD
