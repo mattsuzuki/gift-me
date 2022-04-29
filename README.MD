@@ -23,7 +23,7 @@
 </div>
 <div>
 <h1>wireframe</h1>
-   ![Screen Shot 2022-04-29 at 9 52 54 AM](https://user-images.githubusercontent.com/53027722/165989043-0afa8ad1-df1d-4c6b-8f8a-74f0aa5022c0.png)
+
 
 <img src="/images/langingGift-Me.jpeg.jpeg" >
  <a  href="https://trello.com/1/cards/6261edaa8c6f8d295f8e79d5/attachments/6261edaa8c6f8d295f8e79e6/previews/6261edab8c6f8d295f8e79fc/download/landing_page-Gift-Me.jpeg.jpg" </a>
