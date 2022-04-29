@@ -23,7 +23,7 @@
 <div>
 <h1>wireframe</h1>
 
- ![Screen Shot 2022-04-29 at 9 52 54 AM](https://user-images.githubusercontent.com/53027722/165992904-eb34ed6d-dd00-43de-8d1a-698bc1388704.png)
+
 
 ![Screen Shot 2022-04-29 at 9 52 54 AM](https://user-images.githubusercontent.com/53027722/165992601-5399eea1-6149-4d4e-ae1c-92d7ad517f99.png)
 
