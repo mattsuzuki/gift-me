@@ -1,7 +1,7 @@
 <div align ="center">
    <h1>Gift Me </h1>
    <h3></h3>
-   <h5> Matthew Suzuki </h5> <a>https://gift-me-mjs.herokuapp.com/</a>                           
+   <h5> Matthew Suzuki </h5>https://gift-me-mjs.herokuapp.com/                           
 </div>
 
 <h1> Application Details</h1>
