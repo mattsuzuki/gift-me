@@ -58,6 +58,7 @@ body > main h1:first-child {
   margin-top: 80px;
   font-size: xxx-large;
   width: 800px;
+  text-align: center;
 }
 
 nav > a {
