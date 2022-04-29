@@ -34,10 +34,6 @@
 ![Screen Shot 2022-04-29 at 9 50 56 AM](https://user-images.githubusercontent.com/53027722/165992775-e6784db5-39f2-4afc-a144-f2a6746e30b8.png)
 
 
-<img src= "imgs/personalReg.png>
-
-<img src= "imgs/searchreg.png>
-
 </div>
 <div>
 <h1> Future Features </h1>
