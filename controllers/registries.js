@@ -39,8 +39,7 @@ function create(req, res) {
 
 function show(req, res) {
   Registry.findById(req.params.id, function (err, registry) {
-    console.log(registry);
-    res.render("registries/show.ejs", { registry, title: "title" });
+    res.render("registries/show.ejs", { registry });
   });
 }
 
@@ -49,7 +48,7 @@ function edit(req, res) {
     { _id: req.params.id, userRecommending: req.user._id },
     function (err, registry) {
       if (err || !registry) return res.redirect("/registries");
-      res.render("registries/edit", { registry, title: 'edit registry' });
+      res.render("registries/edit", { registry, title: "edit registry" });
     }
   );
 }
@@ -78,3 +77,9 @@ function deleteRegistry(req, res) {
     }
   );
 }
+
+
+
+
+
+

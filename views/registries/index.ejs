@@ -1,21 +1,15 @@
 <%- include('../partials/header') %>
-<table id="list">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Existing Registries</th>
-      <!-- <th>Existing Registries</th> -->
-    
-    </tr>
-  </thead>
-  <tbody>
-    <% registries.forEach(function(m) { %>
-      <tr>
-        <td><a href="/registries/<%= m._id %>"><%= m.title %></a></td>
-        <td><a href="/registries/<%= m._id %>">DETAILS</a></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
-  
+
+<div class="registries">
+  <h2>All registries</h2>
+  <div class="registries-list">
+    <% registries.forEach(function(registry) { %>
+    <a href="/registries/<%= registry.id %>" class="registries-list-item">
+      <h3><%= registry.title %></h3>
+      <p><%= registry.items.length%> Items</p>
+    </a>
+    <% }); %>
+  </div>
+</div>
+
 <%- include('../partials/footer') %>

@@ -1,47 +1,85 @@
 <%- include('../partials/header.ejs') %>
 
-<div class="showH">
-<h1><%= registry.title %></h1>
-<h2><%= registry.eventType %></h2>
-</div>
-<% if (user._id.toString() === registry.user._id.toString()) { %>
-<form
-  id="add-items-form"
-  method="POST"
-  action="/registries/<%= registry._id %>/items"
->
-  <label>Item Name:</label>
-  <input type="text" name="name" required />
-  <label>Item Type:</label>
-  <input type="text" name="itemType" required  />
-  <label>URL:</label>
-  <input type="text" name="URL" required /> 
-  <input type="submit" value="Add Item"  />
-</form>
+<header class="registry-header">
+  <div class="width">
+    <h1><%= registry.title %></h1>
+    <h2><%= registry.eventType %></h2>
+  </div>
+</header>
 
-<form method="POST" action="/registries/<%=registry._id%>?_method=DELETE" class="delete-form">
-  <button id="edit-button" type ="submit">Delete Registry</button>
-</form>
+<div class="registry-items">
+  <div class="width">
+    <div class="box">
+      <h2>Items</h2>
 
-<form action="/registries/<%= registry._id %>/edit" method="GET">
-  <button id="edit-button" type="submit">Edit Registry</button>
-</form>
-<% }%>
+      <% registry.items.forEach(function(item) { %>
+      <div class="registry-item">
+        <div class="registry-item-text">
+          <h3><%= item.name %></h3>
+          <h4><%= item.itemType %></h4>
+        </div>
 
-<div id="regbuild">
-  <h2>Items</h2>
-<% registry.items.forEach(function(item) { %>
-  <div id="newitem">
+        <a class="button" href="<%= item.URL %>">Buy now</a>
+      </div>
 
-  <h3><%= item.name %></h3>
-</div>
-<% if (user._id.toString() === registry.user._id.toString()) { %>
-  <form method="POST" action="/items/<%=item._id%>?_method=DELETE" class="delete-form">
-    <button id= "edit-button" type ="submit">Delete Item</button>
-  </form>
-  <% }%>
-<% }) %>
+      <% if (user && user._id.toString() === registry.user._id.toString()) { %>
+      <form
+        style="display: none"
+        method="POST"
+        action="/items/<%=item._id%>?_method=DELETE"
+        class="delete-form"
+      >
+        <button id="edit-button" type="submit">Delete Item</button>
+      </form>
+      <% }%> <% }) %>
+    </div>
+  </div>
 </div>
 
+<% if (user) { %> <% if (user._id.toString() === registry.user._id.toString()) {
+%>
 
-<%- include('../partials/footer') %>
+<div class="registry-add-item">
+  <div class="width">
+    <form
+      class="box"
+      method="POST"
+      action="/registries/<%= registry._id %>/items"
+    >
+      <h2>Add an item</h2>
+
+      <div class="field">
+        <label>Item name</label>
+        <input type="text" name="name" required />
+      </div>
+
+      <div class="field">
+        <label>Item type</label>
+        <input type="text" name="itemType" required />
+      </div>
+
+      <div class="field">
+        <label>URL</label>
+        <input type="text" name="URL" required />
+      </div>
+
+      <div class="field">
+        <input class="button full-width" type="submit" value="Add item" />
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="registry-actions">
+  <div class="width">
+    <form method="POST" action="/registries/<%=registry._id%>?_method=DELETE">
+      <button class="button red" type="submit">Delete Registry</button>
+    </form>
+
+    <form action="/registries/<%= registry._id %>/edit" method="GET">
+      <button class="button" type="submit">Edit Registry</button>
+    </form>
+  </div>
+</div>
+
+<% }%> <% } %> <%- include('../partials/footer') %>

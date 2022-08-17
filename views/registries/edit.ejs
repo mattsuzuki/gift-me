@@ -1,16 +1,33 @@
 <%- include('../partials/header.ejs') %>
 
+<div class="registry-new">
+  <div class="width">
+    <form
+      class="box"
+      action="/registries/<%= registry._id %>?_method=PUT"
+      method="POST"
+    >
+      <h1>Edit registry</h1>
 
-<form id="new-form" action="/registries/<%= registry._id %>?_method=PUT" method="POST">
-    <label>Name Your Registry:</label>
-    <input type="text" name="title" value="<%= registry.title %>">
-  
-    <label>Event:</label>
-    <input type="text" name="eventType" value="<%= registry.eventType %>" >
-  
-    <input class="addBtn" type="submit" value="Update Registry">
-  
-  </form>
-  
+      <div class="field">
+        <label>Name</label>
+        <input type="text" name="title" value="<%= registry.title %>" />
+      </div>
+
+      <div class="field">
+        <label>Event</label>
+        <input type="text" name="eventType" value="<%= registry.eventType %>" />
+      </div>
+
+      <div class="field">
+        <input
+          class="button full-width"
+          type="submit"
+          value="Update registry"
+        />
+      </div>
+    </form>
+  </div>
+</div>
 
 <%- include('../partials/footer') %>

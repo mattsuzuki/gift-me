@@ -1,10 +1,14 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+const Registry = require("../models/registry");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Gift-Me' });
+router.get("/", async function (req, res, next) {
+  const registries = await Registry.find()
+    .populate("items")
+    .sort({ createdAt: "desc" });
+  res.render("index", { registries });
 });
 
 router.get('/', function(req, res, next) {

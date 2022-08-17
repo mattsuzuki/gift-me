@@ -1,13 +1,31 @@
 <%- include('./partials/header.ejs') %>
 
-
-    <h1>Welcome to Gift Me</h1>
-    <h2>Start Building your Registry Now</h2>
-    <!-- <p>Welcome to <%= title %></p> -->
-    <div class="showcase">
-   <img src="/images/giftme.png" alt="logo" width="500" height="400">
+<div class="home-top">
+  <div class="width">
+    <div class="home-top-text">
+      <h1>Welcome to Gift Me</h1>
+      <h2>Start building your registry now</h2>
+      <a class="home-top-button" href="/registries/new">Start registry</a>
+    </div>
+    <div class="home-top-image">
+      <img src="/images/gift.jpg" />
+    </div>
+  </div>
 </div>
-  
- 
+
+<div class="registries">
+  <div class="width">
+    <h2>Latest Registries</h2>
+
+    <div class="registries-list">
+      <% registries.forEach(function(registry) { %>
+      <a href="/registries/<%= registry.id %>" class="registries-list-item">
+        <h3><%= registry.title %></h3>
+        <p><%= registry.items.length%> Items</p>
+      </a>
+      <% }) %>
+    </div>
+  </div>
+</div>
 
 <%- include('./partials/footer.ejs') %>
